@@ -1,28 +1,30 @@
 import { v2 } from "@govtechsg/open-attestation";
 
-export interface CustomTemplateCertificate extends v2.OpenAttestationDocument {
+export interface CocTemplateCertificate extends v2.OpenAttestationDocument {
   name: string;
-  institute: string;
-  foo?: {
-    title: string;
+  recipient: {
+    name: string;
   };
-  $template: v2.TemplateObject;
 }
 
-export const customTemplateCertificate: CustomTemplateCertificate = {
-  name: "John Doe",
-  institute: "Institute of John Doe",
+export const cocTemplateCertificate: CocTemplateCertificate = {
+  name: "OpenAttestation Certificate of Completion",
   issuers: [
     {
-      name: "institute of blockchain"
+      name: "My name",
+      documentStore: "0x92D3768de32024c3d3674bC01657F9d94197A2cF",
+      identityProof: {
+        location: "hungry-bronze-horse.sandbox.openattestation.com",
+        type: v2.IdentityProofType.DNSTxt
+      }
     }
   ],
-  $template: {
-    name: "custom",
-    type: v2.TemplateType.EmbeddedRenderer,
-    url: "http://localhost:3000"
+  recipient: {
+    name: "Gary Lim"
   },
-  foo: {
-    title: "Bar is awesome"
+  $template: {
+    name: "COC",
+    type: v2.TemplateType.EmbeddedRenderer,
+    url: "https://determined-elion-72a0a5.netlify.app/"
   }
 };

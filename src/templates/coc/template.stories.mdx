@@ -1,0 +1,22 @@
+import { Meta, Preview, Props, Description, Story } from "@storybook/addon-docs/blocks";
+import { object } from "@storybook/addon-knobs";
+import { CocTemplate } from "./template";
+import { cocTemplateCertificate } from "../samples/customTemplateSample";
+
+<Meta title="MDX|CocTemplate" component={CocTemplate} />
+
+# CocTemplate component
+
+<Description of={CocTemplate} />
+
+# Props
+
+<Props of={CocTemplate} />
+
+# Usage
+
+<Preview>
+  <Story name="basic sample">
+    <CocTemplate document={object("document", cocTemplateCertificate)} />
+  </Story>
+</Preview>

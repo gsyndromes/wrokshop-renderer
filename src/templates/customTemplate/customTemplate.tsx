@@ -19,6 +19,7 @@ export const CustomTemplate: FunctionComponent<TemplateProps<CustomTemplateCerti
     <div css={style} className={className} id="custom-template">
       <div>
         <h1>{document?.foo?.title ?? "Default title"}</h1>
+        <img SRC="https://upload.wikimedia.org/wikipedia/commons/f/f9/Phoenicopterus_ruber_in_S%C3%A3o_Paulo_Zoo.jpg" width="100" height="100"></img>
         <pre>{JSON.stringify(document, null, 2)}</pre>
       </div>
     </div>
